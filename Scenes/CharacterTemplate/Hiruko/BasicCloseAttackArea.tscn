@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/Character/Hiruko/BasicCloseArea.gd" type="Script" id=1]
+
+[node name="BasicCloseAttackArea" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -4.71741, -1.24124, 179.002, -210.014, 249.15, -129.845, 279.213, -1.24124, 235.788, 122.352, 173.992, 200.85 )
+[connection signal="body_entered" from="." to="." method="_on_BasicCloseAttackArea_body_entered"]

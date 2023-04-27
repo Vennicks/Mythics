@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Room.gd" type="Script" id=2]
+[ext_resource path="res://Script/Items/walls.gd" type="Script" id=3]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 40.5281, 2529.41, 46.248, 687.564, 623.97, 687.564, 543.889, 2535.13, 629.69, 252.843, 446.649, 247.123, 452.369, 41.2021, 643.608, 37.2667, 850.697, 58.9028, 761.25, 3335.93, 549.61, 3335.93, 778.41, 2552.29, 1141.24, 61.9937, 1133.05, 2546.57, 841.424, -160.549, 646.699, -160.549 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 10, 3, 11 ), PoolIntArray( 8, 12, 13, 11, 3, 2 ), PoolIntArray( 8, 2, 4 ), PoolIntArray( 14, 8, 7, 15 ) ]
+outlines = [ PoolVector2Array( 452.369, 41.2021, 643.608, 37.2667, 646.699, -160.549, 841.424, -160.549, 850.697, 58.9028, 1141.24, 61.9937, 1133.05, 2546.57, 778.41, 2552.29, 761.25, 3335.93, 549.61, 3335.93, 543.889, 2535.13, 40.5281, 2529.41, 46.248, 687.564, 623.97, 687.564, 629.69, 252.843, 446.649, 247.123 ) ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 0, 600 )
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 1200, 0, 1200, 2000, 0, 2000 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 600, 300 )
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 600, 0, 600, 600, 0, 600 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2( 400, 0 )
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 800, 0, 800, 300, 0, 300 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2( 800, 2600 )
+rotation = 1.5708
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 800, 0, 800, 300, 0, 300 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2( 900, -250 )
+rotation = 1.5708
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 800, 0, 800, 300, 0, 300 )
+
+[node name="Spawn_W" type="Node2D" parent="."]
+position = Vector2( 1000, 2350 )
+
+[node name="Spawn_E" type="Node2D" parent="."]
+position = Vector2( 600, 150 )
+
+[node name="Door_W" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, -50 )
+rotation = 1.5708
+
+[node name="Door_E" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1200, 2150 )
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 600.557, -248.886 )
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 300, 0, 300, 250, 600, 250, 600, 2850, 200, 2850, 200, 3650, -100, 3650, -100, 2850, -600, 2850, -600, 850, 0, 850, 0, 550, -200, 550, -200, 250, 0, 250, 0, 0, -30.0458, 0.52002, -31.3502, 212.879, -254.859, 210.829, -258.96, 577.875, -45.704, 579.925, -49.8051, 797.282, -664.966, 803.434, -667.172, 2954.65, -171.592, 2954.65, -171.592, 3729, 246.554, 3734.16, 267.203, 2903.03, 680.187, 2908.19, 669.024, 174.001, 369.107, 178.412, 375.723, -40.645, -6.52295, -46.5257 )
+
+[node name="Spawner" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Spawner"]
+position = Vector2( 381.183, 1207.08 )
+
+[node name="Node2D2" type="Node2D" parent="Spawner"]
+position = Vector2( 762.367, 2032.98 )
+
+[node name="Node2D3" type="Node2D" parent="Spawner"]
+position = Vector2( 980.186, 1016.49 )
+
+[node name="Node2D4" type="Node2D" parent="Spawner"]
+position = Vector2( 181.516, 2259.87 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Entity" type="Node" parent="."]

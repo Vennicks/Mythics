@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Menu/Jaguarian.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Menu/Hiruko.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Image/Menu/overlay_rpg.png" type="Texture" id=3]
+[ext_resource path="res://Image/Menu/14121_800x480.jpg" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+func _ready():
+	pass # Replace with function body.
+
+func _on_Back_pressed():
+	if get_tree().change_scene(\"res://Scenes/Menu/Menu.tscn\"):
+		pass
+	else:
+		return
+
+func _on_Button_Choose_pressed():
+	if get_tree().change_scene(\"res://Scenes/MainScene.tscn\"):
+		pass
+	else:
+		return
+	
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Sprite
+
+var a = 0
+
+func _ready():
+	global.char_name = \"Jaguarienne\"
+
+func _on_Button_Next_pressed():
+	if a == 0:
+		get_node(\"Jaguarian\").hide()
+		get_node(\"Hiruko\").show()
+		a = 1
+		global.char_name = \"Hiruko\"
+	else:
+		get_node(\"Jaguarian\").show()
+		get_node(\"Hiruko\").hide()
+		a = 0
+		global.char_name = \"Jaguarienne\"
+"
+
+[node name="SelectionChamp" type="CanvasLayer"]
+script = SubResource( 1 )
+
+[node name="14121_800x480" type="Sprite" parent="."]
+position = Vector2( 960, 560 )
+scale = Vector2( 2.4051, 2.33036 )
+texture = ExtResource( 4 )
+
+[node name="Back" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 60.0
+margin_right = 200.0
+margin_bottom = 140.0
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 900.0
+margin_top = 17.348
+margin_right = 998.0
+margin_bottom = 35.348
+text = "SELECT CHAMP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button Choose" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -158.0
+margin_top = -105.0
+margin_right = 158.0
+margin_bottom = -18.9999
+text = "CHOOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="overlay_rpg" type="Sprite" parent="."]
+position = Vector2( 961.869, 543.801 )
+scale = Vector2( 1.59593, 1.59703 )
+texture = ExtResource( 3 )
+script = SubResource( 2 )
+
+[node name="Jaguarian" parent="overlay_rpg" instance=ExtResource( 1 )]
+position = Vector2( -602.701, -340.508 )
+scale = Vector2( 0.626594, 0.626162 )
+
+[node name="Hiruko" parent="overlay_rpg" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -602.701, -340.508 )
+scale = Vector2( 0.626594, 0.626162 )
+
+[node name="Button Next" type="Button" parent="overlay_rpg"]
+margin_left = 408.632
+margin_top = 13.8388
+margin_right = 467.632
+margin_bottom = 41.8388
+text = "NEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Button Choose" to="." method="_on_Button_Choose_pressed"]
+[connection signal="pressed" from="overlay_rpg/Button Next" to="overlay_rpg" method="_on_Button_Next_pressed"]

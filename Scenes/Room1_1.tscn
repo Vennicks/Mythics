@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Room.gd" type="Script" id=2]
+[ext_resource path="res://Script/Items/walls.gd" type="Script" id=3]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 90.0684, 85.9951, 1436.52, 90.6541, 1459.81, 1455.74, 122.681, 1432.44 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 90.0684, 85.9951, 1436.52, 90.6541, 1459.81, 1455.74, 122.681, 1432.44 ) ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0.00511932, -0.00453424, 1600.01, 0.00662994, 1600.01, 1600.02, -0.00492173, 1600.01, -0.00491214, 0.100323, -0.19227, 0.110732, -0.233906, 1600.27, 1600.35, 1600.33, 1600.26, -0.378277, 0.022078, -0.263781 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 1600, 0, 1600, 1600, 0, 1600 )
+
+[node name="Door_N" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="Spawn_S" type="Node2D" parent="."]
+position = Vector2( 800, 100 )
+
+[node name="Door_S" parent="." instance=ExtResource( 1 )]
+position = Vector2( 597.876, 1580.03 )
+
+[node name="Spawn_N" type="Node2D" parent="."]
+position = Vector2( 800, 1500 )
+
+[node name="Spawner" type="Node" parent="."]
+
+[node name="1" type="Node2D" parent="Spawner"]
+position = Vector2( 240.306, 475.707 )
+
+[node name="2" type="Node2D" parent="Spawner"]
+position = Vector2( 1211.34, 495.324 )
+
+[node name="3" type="Node2D" parent="Spawner"]
+position = Vector2( 779.768, 946.51 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )

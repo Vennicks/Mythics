@@ -1,0 +1,35 @@
+{
+  "Jaguarienne": {
+    "SPEED": 750,
+    "LIFE_POINTS": 300,
+    "DODGE_DAMAGE": 30,
+    "1ST_ATTACK_DMG": 70,
+    "2ND_ATTACK_DMG": 100,
+    "BASIC_ATTACK_DMG": 30,
+    "1ST_ATTACK_CD": 0.5,
+    "2ND_ATTACK_CD": 5,
+    "DODGE_CD": 3,
+    "BASIC_ATTACK_CD": 0.1,
+    "DODGE_DURATION" : 0.17,
+    "BASIC_ATTACK_DURATION" : 0.1,
+    "1ST_ATTACK_DURATION" : 1,
+    "2ND_ATTACK_DURATION" : 1
+
+  },
+  "Hiruko": {
+    "SPEED": 600,
+    "LIFE_POINTS": 400,
+    "DODGE_DAMAGE": 70,
+    "1ST_ATTACK_DMG": 100,
+    "2ND_ATTACK_DMG": 80,
+    "BASIC_ATTACK_DMG": 30,
+    "1ST_ATTACK_CD": 4,
+    "2ND_ATTACK_CD": 4,
+    "DODGE_CD": 7,
+    "BASIC_ATTACK_CD": 0.3,
+    "DODGE_DURATION" : 3,
+    "BASIC_ATTACK_DURATION" : 1,
+    "1ST_ATTACK_DURATION" : 0.6,
+    "2ND_ATTACK_DURATION" : 3
+  }
+}

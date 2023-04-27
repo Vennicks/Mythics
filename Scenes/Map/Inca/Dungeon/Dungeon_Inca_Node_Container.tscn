@@ -1,0 +1,49 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room1_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Rooms/Room_Container.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room2_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room4_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room7_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room3_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room5_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Entrance_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room8_1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room9_1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room10_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Map/Inca/Dungeon/Room6_1.tscn" type="PackedScene" id=13]
+
+[node name="Room_Container" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Room_0;0" parent="." instance=ExtResource( 9 )]
+
+[node name="Room_0;-1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 809.738, -3282.68 )
+
+[node name="Room_0;-2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 909.494, -5249.54 )
+
+[node name="Room_-1;-2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1723.25, -4850.64 )
+
+[node name="Room_1;-2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3813.49, -4308.13 )
+
+[node name="Room_2;-2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 6143.08, -2425.32 )
+
+[node name="Room_2;-1" parent="." instance=ExtResource( 13 )]
+position = Vector2( 8855.6, 1005.23 )
+
+[node name="Room_3;-2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 9975.58, -710.441 )
+
+[node name="Room_2;-3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -2008.82, -12057.1 )
+
+[node name="Room_2;-4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 549.014, -15752.7 )
+
+[node name="Room_1;-3" parent="." instance=ExtResource( 12 )]
+position = Vector2( -8221.9, -12946.8 )

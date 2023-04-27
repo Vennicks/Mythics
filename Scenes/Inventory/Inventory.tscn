@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/Inventory/GridBackPack.gd" type="Script" id=1]
+[ext_resource path="res://Image/Grid.png" type="Texture" id=2]
+[ext_resource path="res://Script/Inventory/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Script/Inventory/EquipmentSlot.gd" type="Script" id=4]
+
+[node name="Inventory" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryBase" type="Panel" parent="."]
+margin_left = -338.0
+margin_top = -207.0
+margin_right = 368.0
+margin_bottom = 198.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridBackPack" type="TextureRect" parent="."]
+self_modulate = Color( 0.419608, 0.396078, 0.396078, 1 )
+margin_left = -322.471
+margin_top = -128.067
+margin_right = 125.529
+margin_bottom = 127.933
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EquipmentSlot" type="Panel" parent="."]
+modulate = Color( 0.745098, 0.690196, 0.690196, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 152.0
+margin_top = -179.0
+margin_right = 349.0
+margin_bottom = 175.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HEAD" type="Panel" parent="EquipmentSlot"]
+margin_left = 97.2
+margin_top = 13.3
+margin_right = 175.2
+margin_bottom = 75.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CHEST" type="Panel" parent="EquipmentSlot"]
+self_modulate = Color( 0.988235, 0.988235, 0.988235, 1 )
+margin_left = 93.0001
+margin_top = 86.0
+margin_right = 181.0
+margin_bottom = 206.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MAIN_HAND" type="Panel" parent="EquipmentSlot"]
+self_modulate = Color( 0.988235, 0.988235, 0.988235, 1 )
+margin_left = 16.45
+margin_top = 87.1
+margin_right = 79.45
+margin_bottom = 207.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LEGS" type="Panel" parent="EquipmentSlot"]
+self_modulate = Color( 0.988235, 0.988235, 0.988235, 1 )
+margin_left = 94.9
+margin_top = 217.1
+margin_right = 182.9
+margin_bottom = 337.1
+__meta__ = {
+"_edit_use_anchors_": false
+}

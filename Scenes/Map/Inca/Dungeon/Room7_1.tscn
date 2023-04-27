@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Room.gd" type="Script" id=2]
+[ext_resource path="res://Script/Items/walls.gd" type="Script" id=3]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 2233.64, 729.007, 70.4167, 713.444, 109.322, 52.0284, 3182.96, 90.9353, 4591.39, -1395.3, 4614.73, 3398.01, 3182.96, 3374.67, 3151.84, 1133.64, 3182.96, -1403.09, 2256.98, 1133.64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 3 ), PoolIntArray( 3, 8, 4 ), PoolIntArray( 0, 3, 7, 9 ) ]
+outlines = [ PoolVector2Array( 109.322, 52.0284, 3182.96, 90.9353, 3182.96, -1403.09, 4591.39, -1395.3, 4614.73, 3398.01, 3182.96, 3374.67, 3151.84, 1133.64, 2256.98, 1133.64, 2233.64, 729.007, 70.4167, 713.444 ) ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 2200, 0, 2200, 800, 0, 800 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 2200, 0 )
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 900, 0, 900, 1200, 0, 1200 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2( 3100, -1500 )
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 1600, 0, 1600, 5000, 0, 5000 )
+
+[node name="Spawn_E" type="Node2D" parent="."]
+position = Vector2( 200, 350 )
+
+[node name="Door_W" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 150 )
+rotation = 1.5708
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 3100, 0, 3100, -1500, 4700, -1500, 4700, 3500, 3100, 3500, 3100, 1200, 2200, 1200, 2200, 800, 0, 800, 0, 0, -22.2078, 5.49799, -56.64, 872.827, 2023.18, 909.746, 2850.4, 3810.65, 5116.14, 3732.19, 5139.08, -2251.43, 2640.89, -2060.89, 2556.21, -536.57, -5.21948, -170.65 )
+
+[node name="Spawner" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Spawner"]
+position = Vector2( 2391.74, 393.163 )
+
+[node name="Node2D2" type="Node2D" parent="Spawner"]
+position = Vector2( 3743.24, -827.282 )
+
+[node name="Node2D3" type="Node2D" parent="Spawner"]
+position = Vector2( 4177.36, 1990.39 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Entity" type="Node" parent="."]

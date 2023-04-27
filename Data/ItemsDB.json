@@ -1,0 +1,26 @@
+{
+  "Sword": {
+    "ICON": "res://Image/Items/Common/Sword.png",
+    "SLOT": "MAIN_HAND",
+    "DAMAGE": 30,
+    "ARMOR": 0
+  },
+  "Bow": {
+    "ICON": "res://Image/Items/Rare/bow_raybow.png",
+    "SLOT": "MAIN_HAND",
+    "DAMAGE": 10,
+    "ARMOR": 0
+  },
+  "Potato": {
+    "ICON": "res://Image/Potato.png",
+    "SLOT": "MAIN_HAND",
+    "DAMAGE": 0,
+    "ARMOR": 0
+  },
+  "Iron chestplate": {
+    "ICON": "res://Image/Items/Legendary/Chestplate.png",
+    "SLOT": "CHEST",
+    "DAMAGE": 0,
+    "ARMOR": 20
+  }
+}

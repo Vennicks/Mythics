@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Room.gd" type="Script" id=2]
+[ext_resource path="res://Script/Items/walls.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 1300, 0, 1300, 1300, 0, 1300 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( -600, 0 )
+color = Color( 0.435294, 0.435294, 0.435294, 1 )
+polygon = PoolVector2Array( 0, 0, 1300, 0, 1300, 400, 0, 400 )
+
+[node name="Spawn_S" type="Node2D" parent="."]
+position = Vector2( -350, 200 )
+
+[node name="Door_N" parent="." instance=ExtResource( 1 )]
+position = Vector2( -550, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -600, 0, 1300, 0, 1300, 1300, 0, 1300, 0, 400, -600, 400, -600, 0, -656.989, -5.91519, -635.3, 428.75, -37.7507, 426.85, -48.7052, 1343.83, 1344.13, 1339.93, 1342.94, -55.6759, -598.928, -39.2715 )
